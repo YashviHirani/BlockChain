@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ArbiLearn is a premium Web3 learning site for Arbitrum, Layer 2, crypto prices, and blockchain mining concepts.">
+  <title>ArbiLearn | Learn Arbitrum and Web3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="noise-layer" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <button class="logo nav-route" type="button" data-page="home" aria-label="Go to home">
+        <span class="logo-mark">⬡</span>
+        <span>Arbi<span>Learn</span></span>
+      </button>
+      <button class="mobile-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <button class="nav-link active nav-route" type="button" data-page="home">Home</button>
+        <button class="nav-link nav-route" type="button" data-page="concepts">Concepts</button>
+        <button class="nav-link nav-route" type="button" data-page="prices">Live Prices</button>
+        <button class="nav-link nav-route" type="button" data-page="simulator">Simulator</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="page-shell">
+    <section id="page-home" class="page active-page" data-page="home" aria-labelledby="home-title">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="badge live-badge reveal" style="--delay: 0s"><span class="pulse-dot"></span> Live on Arbitrum One</div>
+          <h1 id="home-title" class="hero-title reveal" style="--delay: .08s">The Future of Ethereum Lives on <span class="gradient-text">Layer 2</span></h1>
+          <p class="hero-copy reveal" style="--delay: .16s">Ethereum changed the internet of value. Layer 2 keeps that promise alive by making transactions fast, affordable, and ready for everyday use.</p>
+          <div class="hero-actions reveal" style="--delay: .24s">
+            <button class="btn primary nav-route" type="button" data-page="concepts">Explore Concepts <span aria-hidden="true">→</span></button>
+            <button class="btn ghost nav-route" type="button" data-page="simulator">Watch Simulator <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="chain-visual reveal" style="--delay: .32s" aria-label="Animated blockchain visual">
+            <article class="mini-block">
+              <strong>Block #1</strong>
+              <span>Hash 00a7...9f31</span>
+              <small>Prev 0000...0000</small>
+            </article>
+            <div class="block-arrow" aria-hidden="true">→</div>
+            <article class="mini-block">
+              <strong>Block #2</strong>
+              <span>Hash 00c1...e440</span>
+              <small>Prev 00a7...9f31</small>
+            </article>
+            <div class="block-arrow" aria-hidden="true">→</div>
+            <article class="mini-block">
+              <strong>Block #3</strong>
+              <span>Hash 00f9...71ab</span>
+              <small>Prev 00c1...e440</small>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <p class="section-label">The Problem</p>
+        <h2>Ethereum is Powerful. But It's Expensive.</h2>
+        <div class="problem-grid">
+          <article class="feature-card problem-card"><div class="top-bar"></div><span class="card-icon">🐢</span><h3>Slow</h3><p>Ethereum mainnet processes about 15 transactions per second, so demand can quickly outrun available block space.</p></article>
+          <article class="feature-card problem-card"><div class="top-bar"></div><span class="card-icon">💸</span><h3>Costly</h3><p>During heavy activity, gas fees can spike above $50 per transaction, pricing out everyday users and smaller experiments.</p></article>
+          <article class="feature-card problem-card"><div class="top-bar"></div><span class="card-icon">🔒</span><h3>Congested</h3><p>Millions of wallets, bots, protocols, and apps compete for the same scarce block space every few seconds.</p></article>
+        </div>
+      </section>
+
+      <section class="content-section split-section">
+        <div>
+          <p class="section-label">What Is Arbitrum</p>
+          <h2>Arbitrum: Ethereum's Turbo Engine</h2>
+          <p class="section-copy">Arbitrum is an Optimistic Rollup that runs transactions off Ethereum, bundles the results, and posts compressed data back to mainnet. It assumes transactions are valid unless challenged, which keeps fees low while Ethereum remains the judge. Users get a fast app experience without giving up Ethereum's security roots.</p>
+          <ul class="check-list">
+            <li>Batches thousands of transactions off-chain</li>
+            <li>Posts compressed proofs to Ethereum mainnet</li>
+            <li>Inherits Ethereum's full security guarantee</li>
+          </ul>
+        </div>
+        <div class="layer-diagram" aria-label="Layer 1 and Layer 2 diagram">
+          <div class="layer-box l1" tabindex="0" data-tooltip="Ethereum settles and secures the system.">🔴 Ethereum Mainnet (L1)<small>Security Layer</small></div>
+          <div class="diagram-arrow" aria-hidden="true">↕</div>
+          <div class="layer-box l2" tabindex="0" data-tooltip="Arbitrum executes transactions cheaply.">🟣 Arbitrum One (L2)<small>Execution Layer</small></div>
+          <div class="diagram-arrow" aria-hidden="true">↕</div>
+          <div class="layer-box app-layer" tabindex="0" data-tooltip="Users interact with apps here.">🟢 Your dApp<small>Cheap and fast</small></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <article class="impact-card">
+          <div class="impact-heading"><span>⚡</span><div><p class="section-label">Real-World Benefit</p><h2>Real World Impact: Uniswap on Arbitrum</h2></div></div>
+          <div class="comparison-table" role="table" aria-label="Ethereum and Arbitrum comparison">
+            <div role="row" class="table-head"><span role="columnheader">Metric</span><span role="columnheader">Ethereum L1</span><span role="columnheader">Arbitrum L2</span></div>
+            <div role="row"><span>Gas Fee</span><span>~$25-$60</span><span class="good">~$0.10-$0.50</span></div>
+            <div role="row"><span>Speed</span><span>12-15 sec</span><span class="good">&lt; 1 second</span></div>
+            <div role="row"><span>Finality</span><span>~6 min</span><span class="good">Instant UX</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-section">
+        <p class="section-label">Why It Matters</p>
+        <h2>Built Different, For a Reason</h2>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="card-icon cyan">🔐</span><h3>Trustless Security</h3><p>Rollup data lands on Ethereum, so users can verify outcomes instead of trusting a private operator.</p></article>
+          <article class="feature-card"><span class="card-icon purple">⚡</span><h3>Lightning Fast</h3><p>Apps feel immediate because execution happens on L2 while Ethereum handles deeper settlement.</p></article>
+          <article class="feature-card"><span class="card-icon red">🌐</span><h3>EVM Compatible</h3><p>Solidity contracts and familiar Ethereum tools can run on Arbitrum with minimal changes.</p></article>
+        </div>
+      </section>
+    </section>
+
+    <section id="page-concepts" class="page" data-page="concepts" aria-labelledby="concepts-title">
+      <header class="page-header">
+        <p class="section-label">Concept Library</p>
+        <h1 id="concepts-title">Compare the Ideas That Power Web3</h1>
+        <p>Filter, expand, and scan the core mental models behind wallets, chains, keys, and trust.</p>
+        <div class="concept-controls">
+          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="concept-search" type="search" placeholder="Search concepts..." aria-label="Search concepts"></div>
+          <div class="tab-list" role="tablist" aria-label="Concept filters">
+            <button class="tab-btn active" type="button" data-filter="all">All</button>
+            <button class="tab-btn" type="button" data-filter="identity">Identity</button>
+            <button class="tab-btn" type="button" data-filter="tech">Tech</button>
+            <button class="tab-btn" type="button" data-filter="finance">Finance</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="concept-grid" id="concept-grid">
+        <article class="concept-card" data-tags="identity tech" data-title="Web2 vs Web3">
+          <button class="share-btn" type="button" aria-label="Share Web2 vs Web3">↗</button>
+          <header><h2>Web2 vs Web3</h2><span>🌐</span></header>
+          <div class="comparison-split">
+            <div><span class="pill red-pill">🔴 Web2</span><h3>Centralized Web</h3><ul><li>Owned by corporations</li><li>User data is harvested</li><li>Accounts can be banned</li><li>Trust in platforms is required</li><li>Servers decide the rules</li></ul></div>
+            <div><span class="pill green-pill">🟢 Web3</span><h3>User-Owned Web</h3><ul><li>Decentralized networks</li><li>Self-sovereign identity</li><li>Censorship-resistant access</li><li>Trustless verification</li><li>Users control their keys</li></ul></div>
+          </div>
+          <button class="expand-btn" type="button">Key Insight</button>
+          <p class="insight">Web3 gives YOU the keys — literally.</p>
+        </article>
+
+        <article class="concept-card" data-tags="finance tech" data-title="Ethereum vs Bitcoin">
+          <button class="share-btn" type="button" aria-label="Share Ethereum vs Bitcoin">↗</button>
+          <header><h2>Ethereum vs Bitcoin</h2><span>⛓️</span></header>
+          <div class="comparison-split">
+            <div><span class="pill orange-pill">🟠 Bitcoin</span><h3>Digital Gold</h3><ul><li>Store of value</li><li>Proof-of-work consensus</li><li>Simple scripting</li><li>21M hard cap</li><li>~10 minute blocks</li></ul></div>
+            <div><span class="pill purple-pill">🟣 Ethereum</span><h3>World Computer</h3><ul><li>Programmable blockchain</li><li>Smart contracts</li><li>EVM execution</li><li>DeFi and NFT platform</li><li>~12 second blocks</li></ul></div>
+          </div>
+          <button class="expand-btn" type="button">Key Insight</button>
+          <p class="insight">Bitcoin is money. Ethereum is a platform.</p>
+        </article>
+
+        <article class="concept-card" data-tags="identity tech" data-title="Public Key vs Private Key">
+          <button class="share-btn" type="button" aria-label="Share Public Key vs Private Key">↗</button>
+          <header><h2>Public Key vs Private Key</h2><span>🔐</span></header>
+          <div class="comparison-split">
+            <div><span class="pill cyan-pill">🔑 Public Key</span><h3>Your Address</h3><ul><li>Safe to share</li><li>Like an email address</li><li>Derived from private key</li><li>Receives funds</li><li>Visible on-chain</li></ul></div>
+            <div><span class="pill red-pill">🔐 Private Key</span><h3>Your Secret</h3><ul><li>Never share it</li><li>Like your password</li><li>Signs transactions</li><li>Controls wallet funds</li><li>Losing it means losing access</li></ul></div>
+          </div>
+          <div class="key-flow" aria-label="Key signature verification flow"><span>Key</span><b>→</b><span>Signature</span><b>→</b><span>Verification</span></div>
+          <button class="expand-btn" type="button">Key Insight</button>
+          <p class="insight">Public = your mailbox. Private = your house key.</p>
+        </article>
+
+        <article class="concept-card" data-tags="tech" data-title="Blockchain vs Traditional DB">
+          <button class="share-btn" type="button" aria-label="Share Blockchain vs Traditional DB">↗</button>
+          <header><h2>Blockchain vs Traditional DB</h2><span>🗄️</span></header>
+          <div class="comparison-split">
+            <div><span class="pill gray-pill">🗄️ Traditional DB</span><h3>Private Records</h3><ul><li>Centralized server</li><li>Mutable records</li><li>Admin can edit or delete</li><li>Requires trust</li><li>SQL-based and fast</li></ul></div>
+            <div><span class="pill green-pill">⛓️ Blockchain</span><h3>Shared Ledger</h3><ul><li>Distributed ledger</li><li>Immutable history</li><li>No single owner</li><li>Trustless verification</li><li>Append-only and slower</li></ul></div>
+          </div>
+          <button class="expand-btn" type="button">Key Insight</button>
+          <p class="insight">A blockchain is a database that no one owns and everyone trusts.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="page-prices" class="page" data-page="prices" aria-labelledby="prices-title">
+      <header class="page-header price-header">
+        <div>
+          <p class="section-label"><span class="pulse-dot"></span> Crypto Pulse</p>
+          <h1 id="prices-title">Live Prices</h1>
+          <p>Real-time prices from CoinGecko · Updates every 60s</p>
+          <p class="timestamp" id="last-updated" aria-live="polite">Last updated: waiting for first fetch</p>
+        </div>
+        <div class="price-actions">
+          <button class="btn primary" id="refresh-prices" type="button"><span id="refresh-icon">⟳</span> Refresh</button>
+          <label class="switch"><input id="auto-refresh" type="checkbox" checked><span></span> Auto <b>●</b></label>
+        </div>
+      </header>
+      <div class="lookup-row">
+        <input id="coin-lookup" type="search" placeholder="Lookup any CoinGecko ID, e.g. chainlink" aria-label="Coin lookup">
+        <button class="btn ghost" id="lookup-btn" type="button">Lookup</button>
+      </div>
+      <div id="price-status" class="sr-live" aria-live="polite"></div>
+      <div id="lookup-result"></div>
+      <div class="price-grid" id="price-grid"></div>
+      <div class="market-summary" id="market-summary" aria-live="polite">
+        <span>Market Leader: BTC</span><span>Most Gained: --</span><span>Most Lost: --</span>
+      </div>
+    </section>
+
+    <section id="page-simulator" class="page" data-page="simulator" aria-labelledby="sim-title">
+      <header class="page-header">
+        <p class="section-label">Proof of Work</p>
+        <h1 id="sim-title">Blockchain Simulator — Mine Your Own Block</h1>
+        <p>Understand hashing, nonces, and chain immutability hands-on.</p>
+      </header>
+
+      <section class="explainer">
+        <button id="explainer-toggle" type="button" aria-expanded="false">How does mining work? Click to learn →</button>
+        <div class="explainer-body" id="explainer-body">
+          <p>Mining tries different nonce values until the SHA-256 hash starts with <strong>00</strong>. The puzzle is easy to check and intentionally harder to find.</p>
+          <div class="flow-diagram"><span>Data + Nonce</span><b>→</b><span>SHA-256</span><b>→</b><span>Hash Output</span></div>
+        </div>
+      </section>
+
+      <div id="chain-warning" class="warning-banner" hidden>⚠ Chain integrity violated! Block 1 changed.</div>
+
+      <div class="sim-grid">
+        <article class="block-card" id="block1-card">
+          <header><h2>Block #1</h2><span class="status-pill invalid" id="block1-status">✗ Invalid</span></header>
+          <div class="block-fields">
+            <label class="field-wide">📝 Block Data<input id="block1-data" type="text" value="Genesis Block"></label>
+            <label>🔗 Previous Hash<input id="block1-prev" type="text" value="0000000000000000" readonly></label>
+            <label>🎲 Nonce<input id="block1-nonce" type="number" value="0" readonly></label>
+          </div>
+          <div class="hash-box"><span>Current Hash</span><code id="block1-hash">Calculating...</code></div>
+          <div class="hash-preview">Hash Preview: <span id="block1-preview">--</span></div>
+          <div class="button-row"><button class="btn primary" id="mine-block1" type="button">⛏ Mine Block</button><button class="btn ghost" id="reset-block1" type="button">↺ Reset</button></div>
+          <div class="progress-track"><div id="block1-progress"></div></div>
+          <p class="mine-count" id="block1-count">tried 0 hashes</p>
+        </article>
+
+        <div class="chain-arrow-panel" id="chain-arrow-panel">Block 1 Hash → feeds into → Block 2 Previous Hash</div>
+
+        <article class="block-card" id="block2-card">
+          <header><h2>Block #2</h2><span class="status-pill invalid" id="block2-status">✗ Invalid</span></header>
+          <div class="block-fields">
+            <label class="field-wide">📝 Block Data<input id="block2-data" type="text" value="Transaction: Alice → Bob: 5 ETH"></label>
+            <label>🔗 Previous Hash<input id="block2-prev" type="text" readonly></label>
+            <label>🎲 Nonce<input id="block2-nonce" type="number" value="0" readonly></label>
+          </div>
+          <div class="hash-box"><span>Current Hash</span><code id="block2-hash">Calculating...</code></div>
+          <div class="hash-preview">Hash Preview: <span id="block2-preview">--</span></div>
+          <div class="button-row"><button class="btn primary" id="mine-block2" type="button">⛏ Mine Block 2</button><button class="btn ghost" id="reset-block2" type="button">↺ Reset Block 2</button></div>
+          <div class="progress-track"><div id="block2-progress"></div></div>
+          <p class="mine-count" id="block2-count">tried 0 hashes</p>
+        </article>
+      </div>
+
+      <aside class="hash-visualizer">
+        <div>
+          <p class="section-label">Hash Visualizer</p>
+          <h2>Try it yourself — type anything, see the hash change</h2>
+        </div>
+        <textarea id="hash-input" rows="4" placeholder="Type any message..."></textarea>
+        <code id="hash-output">Hash appears here</code>
+        <div class="hash-meta"><span id="char-count">0 characters</span><span id="hash-length">64 chars when hashed</span><span>First 2 chars highlighted</span></div>
+      </aside>
+
+      <div class="tip-grid" id="tip-grid" hidden>
+        <article>💡 Nonce means "number used once" — miners try billions of these.</article>
+        <article>💡 Real Bitcoin requires many more leading zeros — this simulator uses just 2.</article>
+        <article>💡 Changing even one character completely changes the hash.</article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <button class="logo nav-route" type="button" data-page="home" aria-label="Go to home"><span class="logo-mark">⬡</span><span>Arbi<span>Learn</span></span></button>
+        <p>Plain-English Web3 education for builders who want the real mechanics.</p>
+      </div>
+      <div class="footer-links">
+        <button class="nav-route" type="button" data-page="home">Home</button>
+        <button class="nav-route" type="button" data-page="concepts">Concepts</button>
+        <button class="nav-route" type="button" data-page="prices">Live Prices</button>
+        <button class="nav-route" type="button" data-page="simulator">Simulator</button>
+      </div>
+      <p>Built by {{AUTHOR_NAME}} · Arbitrum Builder Pods {{BATCH_NAME}}</p>
+      <a class="github-link" href="{{GITHUB_URL}}" target="_blank" rel="noreferrer" aria-label="GitHub repository">GitHub ↗</a>
+      <small>Powered by Arbitrum One · Not financial advice</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
